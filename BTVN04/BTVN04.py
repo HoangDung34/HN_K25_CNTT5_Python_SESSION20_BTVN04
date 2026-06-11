@@ -157,21 +157,22 @@ def update_player(roster_list):
             match status_choose:
                 case "1":
                     flag["status"] = "Active"
+                    logging.info(f"Updated player {player_id} status from {old_status} to {flag['status']}")
                 case "2":
                     flag["status"] = "Benched"
+                    logging.info(f"Updated player {player_id} status from {old_status} to {flag['status']}")
                 case "3":
                     return
                 case _:
                     print("Lựa chọn trạng thái không hợp lệ")
                     return
 
-            logging.info(f"Updated player {player_id} status from {old_status} to {flag['status']}")
-
             print(f"Thành công: Đã cập nhật trạng thái cho tuyển thủ {player_id}")
         case "3":
             return
         case _:
-            print("Lựa chọn không hợp lệ.")
+            print("Lựa chọn không hợp lệ")
+            return
 
 def generate_payroll_report(roster_list):
     print("--- BÁO CÁO QUỸ LƯƠNG HÀNG THÁNG ---")
